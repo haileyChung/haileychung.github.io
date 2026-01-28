@@ -1212,6 +1212,12 @@
                             <li>Led 5+ ad-hoc market research projects annually, managing 2-6 projects simultaneously and designing customized methodologies that ensured 100% on-time delivery while coordinating with 15+ cross-functional stakeholders.</li>
                             <li>Delivered highly actionable insights that drove significant client expansion, generating 5 additional contracts across 4 clients, resulting in 1.5–3× revenue uplift, 2 new client onboardings, and maintaining 95%+ satisfaction.</li>
                         </ul>
+                        <div style="margin-top: 1rem;">
+                            <button onclick="openProjectsModal()" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem; color: var(--navy); cursor: pointer;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-4-4m4 4l-4 4"/></svg>
+                                View Selected Projects
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1378,6 +1384,65 @@
         <p>© 2025 Hailey HyeYun Chung.</p>
     </footer>
 
+    <!-- Projects Modal -->
+    <div class="modal-overlay" id="projectsModal">
+        <div class="modal-content" style="max-width: 900px; height: auto; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h3 class="modal-title">Selected Projects at Kantar</h3>
+                <div class="modal-actions">
+                    <button class="modal-btn modal-btn-close" onclick="closeProjectsModal()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        Close
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 2rem; overflow-y: auto;">
+                <!-- Project 1: Instant Noodle -->
+                <div style="background: var(--cream); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem;">🍜</span>
+                        <h4 style="font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--navy); margin: 0;">Instant Noodle Market Analysis</h4>
+                    </div>
+                    <ul style="color: var(--slate); padding-left: 1.25rem; margin: 0; line-height: 1.7;">
+                        <li style="margin-bottom: 0.5rem;">Evaluated market impact of new ramen brand launch by segmenting consumers into new market entrants, brand-switchers, and loyalty-based shoppers, providing strategic insights on customer acquisition effectiveness.</li>
+                        <li style="margin-bottom: 0.5rem;">Identified key competitors and analyzed cross-purchase patterns to uncover shared consumer preferences and brand positioning opportunities.</li>
+                        <li>Successfully expanded project scope across multiple product categories following initial delivery, demonstrating strong client satisfaction and strategic value.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: Liquid Detergent -->
+                <div style="background: var(--cream); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem;">🧴</span>
+                        <div>
+                            <h4 style="font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--navy); margin: 0;">Liquid Detergent Market Analysis</h4>
+                            <span style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">Multi-Country Research Lead (Korea)</span>
+                        </div>
+                    </div>
+                    <ul style="color: var(--slate); padding-left: 1.25rem; margin: 0; line-height: 1.7;">
+                        <li style="margin-bottom: 0.5rem;">Analyzed the impact of new product launch on company performance and reviewed buyer growth data following the launch.</li>
+                        <li style="margin-bottom: 0.5rem;">Evaluated brand popularity across heavy and light buyer segments, profiling demographic features and major purchase channels to optimize targeting for high-value consumers.</li>
+                        <li style="margin-bottom: 0.5rem;">Investigated eco-conscious consumer behaviors amid rising ESG awareness, identifying brand preferences and best practices for sustainable product positioning.</li>
+                        <li>Served as the Korea market lead for this multi-country research initiative, ensuring local insights were effectively integrated into global recommendations.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: Biscuit -->
+                <div style="background: var(--cream); border-radius: 12px; padding: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem;">🍪</span>
+                        <h4 style="font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--navy); margin: 0;">Biscuit Market Analysis</h4>
+                    </div>
+                    <ul style="color: var(--slate); padding-left: 1.25rem; margin: 0; line-height: 1.7;">
+                        <li style="margin-bottom: 0.5rem;">Diagnosed root causes of brand decline through comprehensive consumer behavior analysis, identifying opportunities to increase engagement frequency and purchase penetration.</li>
+                        <li style="margin-bottom: 0.5rem;">Analyzed emerging zero-sugar trend impact on category dynamics and consumer preferences.</li>
+                        <li>Developed and presented promotional strategies to re-engage lapsed consumers and strengthen brand positioning within the competitive landscape.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- PDF Modal -->
     <div class="modal-overlay" id="pdfModal">
         <div class="modal-content">
@@ -1401,6 +1466,27 @@
     </div>
 
     <script>
+        // Projects Modal Functions
+        function openProjectsModal() {
+            const modal = document.getElementById('projectsModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectsModal() {
+            const modal = document.getElementById('projectsModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close projects modal on overlay click
+        document.getElementById('projectsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectsModal();
+            }
+        });
+
+        // PDF Modal Functions
         function openModal(title, previewUrl, downloadUrl) {
             const modal = document.getElementById('pdfModal');
             const modalTitle = document.getElementById('modalTitle');
@@ -1435,6 +1521,7 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+                closeProjectsModal();
             }
         });
     </script>
