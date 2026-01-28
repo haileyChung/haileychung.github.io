@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hailey Chung | Business Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --slate: #475569;
+            --slate-light: #94a3b8;
+            --cream: #faf9f7;
+            --white: #ffffff;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --success: #10b981;
+            --gold: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--slate-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: var(--accent-light);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            color: var(--slate-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--slate);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            color: var(--slate-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: var(--slate-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--white);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: var(--slate);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stat-sublabel {
+            color: var(--slate);
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.25rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--cream);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 1rem;
+        }
+
+        .project-badge.award {
+            background: linear-gradient(135deg, var(--gold), #d97706);
+        }
+
+        .project-badge.finalist {
+            background: linear-gradient(135deg, var(--success), #059669);
+        }
+
+        .project-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .project-org {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            flex-grow: 1;
+        }
+
+        .project-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-label {
+            flex-shrink: 0;
+            width: 70px;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.85rem;
+        }
+
+        .project-text {
+            color: var(--slate);
+            font-size: 0.95rem;
+        }
+
+        /* Project Visual - Clickable Image Area */
+        .project-visual {
+            background: var(--navy);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-visual:hover {
+            background: var(--navy-light);
+        }
+
+        .project-visual:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .project-thumbnail {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .project-thumbnail::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+        }
+
+        /* Project Illustration */
+        .project-illustration {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 4/3;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .illustration-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .illustration-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .mini-stat {
+            text-align: center;
+        }
+
+        .mini-stat-value {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--accent-light);
+            font-weight: 700;
+        }
+
+        .mini-stat-label {
+            font-size: 0.7rem;
+            color: var(--slate-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Preview Overlay */
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .preview-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Download Bar */
+        .download-bar {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--slate-light);
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .download-bar:hover {
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+        }
+
+        .download-bar svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .modal-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .modal-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .modal-btn-download {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .modal-btn-download:hover {
+            background: var(--accent-light);
+        }
+
+        .modal-btn-close {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--slate);
+        }
+
+        .modal-btn-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Experience Section */
+        #experience {
+            background: var(--cream);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-date {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .company {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            color: var(--slate);
+            padding-left: 1.25rem;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .skill-category h3 {
+            font-family: 'Fraunces', serif;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            color: var(--navy);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-tag.highlight {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--cream);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .education-card h3 {
+            font-family: 'Fraunces', serif;
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-card .degree {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .date {
+            color: var(--slate);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card ul {
+            color: var(--slate);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .education-card li {
+            margin-bottom: 0.375rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact p {
+            color: var(--slate-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-light);
+            color: var(--slate-light);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .project-visual {
+                min-height: 280px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .modal-content {
+                height: 95vh;
+                border-radius: 12px;
+            }
+
+            .modal-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .project-label {
+                width: auto;
+            }
+
+            .modal-overlay {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .project-card {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Hailey Chung</a>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hailey HyeYun Chung</h1>
+                <p class="tagline">Business Analyst & Data Strategist</p>
+                <p>Business Analyst bridging market research expertise with advanced analytics. With 4+ years at a market research company analyzing consumer behavior across 10+ industries, complemented by an M.S. in Business Analytics from Korea University, I deliver data-driven insights that support strategic decision-making and measurable business impact.</p>
+                
+                <div class="hero-links">
+                    <a href="#projects" class="btn btn-primary">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-4-4m4 4l-4 4"/></svg>
+                        View Projects
+                    </a>
+                    <a href="Hailey_HyeYun_Chung_Resume.pdf" class="btn btn-secondary" download>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="contact-info" style="flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <span><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:haileychung1111@hotmail.com">haileychung1111@hotmail.com</a></span>
+                        <span><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg> <a href="https://www.linkedin.com/in/haileychung-11/" target="_blank">LinkedIn</a></span>
+                    </div>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <span><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Pflugerville, Texas</span>
+                        <span><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Eligible to work (L2 Visa)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Major Research Projects</div>
+                <div class="stat-sublabel">Completed during Master's degree</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Years Market Research Experience</div>
+                <div class="stat-sublabel">5M+ Purchase Records Analyzed Annually</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Industries Covered</div>
+                <div class="stat-sublabel">15+ Market Research Reports Annually</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1.5-3X</div>
+                <div class="stat-label">Revenue Uplift</div>
+                <div class="stat-sublabel"> 100% on-time delivery with 95% client satisfaction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Data-driven solutions delivering measurable business impact. </p>
+                <p> Click on any project to view the full report.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: Capstone -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-badge award"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 2px;"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg> Award Winner</span>
+                        <h3>Retirement Pension Product Recommendation System</h3>
+                        <p class="project-org">Capstone Project · Korea University × Hyundai Motor Securities</p>
+                        
+                        <div class="project-details">
+                            <div class="project-row">
+                                <span class="project-label">Problem</span>
+                                <span class="project-text">Traditional risk assessment failed to capture downside risk tolerance for retirement investors (age 55-65), limiting personalized advisory services.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Solution</span>
+                                <span class="project-text">Developed 3-phase pipeline analyzing 2,000+ financial products using factor modeling, Monte Carlo simulation, and Portfolio Optimization.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Impact</span>
+                                <span class="project-text"> Developed personalized portfolios supported by an AI-generated report to clearly explain each recommendation. Eared highly positive feedback from Hyundai Motor Securities for its real world applicability and the Outstanding Performance Prize.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual" onclick="openModal('Retirement Pension Recommendation System', 'https://drive.google.com/file/d/1Ul7QIYeYbnydLp0NDHlZXJCNSg4mSuzo/preview', 'https://drive.google.com/uc?export=download&id=1Ul7QIYeYbnydLp0NDHlZXJCNSg4mSuzo')">
+                        <div class="project-thumbnail">
+                            <div class="project-illustration">
+                                <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+                                <div class="illustration-stats">
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">2K+</div>
+                                        <div class="mini-stat-label">Products</div>
+                                    </div>
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">5K+</div>
+                                        <div class="mini-stat-label">Personalized Portfolios</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="preview-btn">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    View Presentation
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-bar">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Click to preview or download PDF
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: D-Testbed -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-badge award"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 2px;"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg> Award Winner</span>
+                        <h3>Multi-Horizon Loan Demand Forecasting</h3>
+                        <p class="project-org">D-Testbed Program · Financial Services Commission, Korea</p>
+                        
+                        <div class="project-details">
+                            <div class="project-row">
+                                <span class="project-label">Problem</span>
+                                <span class="project-text">Traditional loan demand prediction relied heavily on credit information, limiting accuracy due to data aging and missing behavioral signals.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Solution</span>
+                                <span class="project-text">Built multi‑horizon machine‑learning models integrating telecom and credit‑card behavioral data to improve both short‑ and long‑term loan demand forecasting.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Impact</span>
+                                <span class="project-text">Projected $0.38M–$5.38M USD in annual profit upside per loan product through model‑driven demand prediction improvements, while establishing a product‑tailored data‑acquisition strategy that significantly enhances cost efficiency.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual" onclick="openModal('D-Testbed: Loan Demand Forecasting', 'https://drive.google.com/file/d/1KCS0gt_l_YpryielrONeBOCoSuDWsvgA/preview', 'https://drive.google.com/uc?export=download&id=1KCS0gt_l_YpryielrONeBOCoSuDWsvgA')">
+                        <div class="project-thumbnail">
+                            <div class="project-illustration">
+                                <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg></div>
+                                <div class="illustration-stats">
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">0.86+</div>
+                                        <div class="mini-stat-label">AUC Score</div>
+                                    </div>
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">$5M+</div>
+                                        <div class="mini-stat-label">Profit Uplift</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="preview-btn">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    View Full Report
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-bar">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Click to preview or download PDF
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Transportation -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-badge finalist"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg> Top 20 Finalist</span>
+                        <h3>Public Transportation Optimization for Seongsu-dong</h3>
+                        <p class="project-org">National Spatial & Transportation Data Challenge · Ministry of Land, Korea</p>
+                        
+                        <div class="project-details">
+                            <div class="project-row">
+                                <span class="project-label">Problem</span>
+                                <span class="project-text">Seongsu-dong in Seoul is experiencing severe public transportation congestion due to rapid growth in floating population, while lacking a systematic and data-driven approach to address the issue.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Solution</span>
+                                <span class="project-text">Conducted integrated analysis of multi-source transportation and mobility datasets to diagnose congestion drivers and proposed data-driven optimization strategies, including bus headway optimization, introduction of new routes, and congestion-based dynamic rerouting algorithms.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Impact</span>
+                                <span class="project-text">Achieved measurable congestion reduction (3.65%–20%), improved passenger mobility convenience, and enhanced policy applicability; additionally developed an automated analytical framework scalable to other regions.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual" onclick="openModal('Seongsu-dong Transportation Optimization', 'https://drive.google.com/file/d/1SgKgVXQi8g37u3sWb62kCoibCxo4nwQn/preview', 'https://drive.google.com/uc?export=download&id=1SgKgVXQi8g37u3sWb62kCoibCxo4nwQn')">
+                        <div class="project-thumbnail">
+                            <div class="project-illustration">
+                                <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+                                <div class="illustration-stats">
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">20%</div>
+                                        <div class="mini-stat-label">Congestion Reduction</div>
+                                    </div>
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">10+</div>
+                                        <div class="mini-stat-label">Datasets</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="preview-btn">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    View Full Report
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-bar">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Click to preview or download PDF
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Shinhan Card -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-badge"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 2px;"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg> Course Project</span>
+                        <h3>Shinhan Card Customer Segmentation Strategy</h3>
+                        <p class="project-org">Business Analytics Programming · Korea University</p>
+                        
+                        <div class="project-details">
+                            <div class="project-row">
+                                <span class="project-label">Problem</span>
+                                <span class="project-text">Identified declining Shinhan Card customers amid competitor growth and inefficient customer management.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Solution</span>
+                                <span class="project-text">Analyzed data from 400K customers across 850 variables using PCA and K-means to segment customers into four clusters and design behavior‑based strategies.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Impact</span>
+                                <span class="project-text">Developed cluster‑specific strategies that improved customer retention potential and supported revenue growth.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual" onclick="openModal('Shinhan Card Customer Segmentation', 'https://drive.google.com/file/d/1Q9G8UGqVjf6P7qFePzJPsAE6ltUqFbAl/preview', 'https://drive.google.com/uc?export=download&id=1Q9G8UGqVjf6P7qFePzJPsAE6ltUqFbAl')">
+                        <div class="project-thumbnail">
+                            <div class="project-illustration">
+                                <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+                                <div class="illustration-stats">
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">400K</div>
+                                        <div class="mini-stat-label">Customers</div>
+                                    </div>
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">850</div>
+                                        <div class="mini-stat-label">variables</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="preview-btn">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    View Full Report
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-bar">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Click to preview or download PDF
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: E-commerce Subscription Analysis -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-badge"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 2px;"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg> Course Project</span>
+                        <h3>Promotion Sensitivity Analysis Based on Subscription Status</h3>
+                        <p class="project-org">Empirical Analytics · Korea University</p>
+                        
+                        <div class="project-details">
+                            <div class="project-row">
+                                <span class="project-label">Problem</span>
+                                <span class="project-text">Identified ambiguity in promotional behavior by recognizing that both subscribers and non‑subscribers could theoretically show stronger or weaker conversion rate increases or faster/slower decision times during promotions, highlighting the lack of empirical evidence on their actual behavioral differences.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Solution</span>
+                                <span class="project-text">Conducted empirical analysis using JD.com’s March 2018 transaction‑level dataset, applying DID methodology with Parallel Trend and Placebo Tests to compare changes in conversion rate and decision time by subscription status.</span>
+                            </div>
+                            <div class="project-row">
+                                <span class="project-label">Impact</span>
+                                <span class="project-text">Demonstrated that subscribers respond more strategically and efficiently during promotions, providing evidence that differentiated promotional strategies for subscribers vs. non‑subscribers are empirically justified.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual" onclick="openModal('E-commerce Subscription Analysis', 'https://drive.google.com/file/d/1PWkzpdp-XCd759MSdr-Kmb6iuJK2yTHb/preview', 'https://drive.google.com/uc?export=download&id=1PWkzpdp-XCd759MSdr-Kmb6iuJK2yTHb')">
+                        <div class="project-thumbnail">
+                            <div class="project-illustration">
+                                <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg></div>
+                                <div class="illustration-stats">
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">DID</div>
+                                        <div class="mini-stat-label">Analysis</div>
+                                    </div>
+                                    <div class="mini-stat">
+                                        <div class="mini-stat-value">Placebo Effect</div>
+                                        <div class="mini-stat-label">Robustness Test</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <div class="preview-btn">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    View Full Report
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-bar">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Click to preview or download PDF
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <p>4+ years of hands-on experience in market research and data analytics across global organizations.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <strong>Apr 2024 - Mar 2025</strong><br>
+                        Korea
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Senior Research Executive</h3>
+                        <p class="company">Kantar Korea · World Panel Division</p>
+                        <ul>
+                            <li>Led 5+ ad-hoc market research projects annually, managing 2-6 projects simultaneously and designing customized methodologies that ensured 100% on-time delivery while coordinating with 15+ cross-functional stakeholders.</li>
+                            <li>Delivered highly actionable insights that drove significant client expansion, generating 5 additional contracts across 4 clients, resulting in 1.5–3× revenue uplift, 2 new client onboardings, and maintaining 95%+ satisfaction.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <strong>Apr 2021 – Mar 2024</strong><br>
+                        Korea
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Research Executive</h3>
+                        <p class="company">Kantar Korea · World Panel Division</p>
+                        <ul>
+                            <li>Generated 15+ comprehensive market research reports annually across 10+ Korean industries by integrating 5M+ annual purchase-record data with external market intelligence, enabling clients to make data-driven sales and portfolio decisions.</li>
+                            <li>Developed 5+ FMCG market trend reports covering 300+ brands, leveraging panel data and desk research to highlight category and consumer trends.</li>
+                            <li>Conducted 10+ training sessions for 50+ new team members and clients on market analysis tools and research methodologies.</li>
+                            <li>Supported data analysis for Sustainability Sector Index 2023, a company-wide market research publication</li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://drive.google.com/file/d/1YOmYmQD1VHVtMRLEllFlgRqvYXBVRM4P/view" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem; color: var(--navy);">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                View Sample Work
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <strong>Jul 2019 – Feb 2020</strong><br>
+                        Hong Kong
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Digital, CRM & E-Commerce Intern</h3>
+                        <p class="company">L'Oréal Hong Kong · Luxe Division</p>
+                        <ul>
+                            <li>Identified cross-brand customer behavior patterns across 8 luxury brands, contributing to the development of an integrated membership program to enhance customer retention and to optimize digital engagement strategies.</li>
+                            <li>Conducted monthly and quarterly sales performance reviews on 8 luxury brands, analyzing 100K+ customer records to identify growth opportunities and propose new business models. </li>
+                            <li>Analyzed e-commerce platform trends across 5+ major Hong Kong and Chinese markets, delivering strategic insights to inform business development decisions. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Certifications</h2>
+                <p>Technical expertise combined with business acumen to drive data-informed decisions.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 6px;"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>Technical Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag highlight">Python</span>
+                        <span class="skill-tag">pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag highlight">Excel (Advanced)</span>
+                        <span class="skill-tag highlight">PowerPoint</span>
+                        <span class="skill-tag">SQL</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 6px;"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg>Analytics</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag highlight">Market Research</span>
+                        <span class="skill-tag">Consumer Behavior</span>
+                        <span class="skill-tag highlight">Statistical Analysis</span>
+                        <span class="skill-tag highlight">Data Mining</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                        <span class="skill-tag">Causal Inference</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag highlight">Korean (Native)</span>
+                        <span class="skill-tag highlight">English (Fluent)</span>
+                        <span class="skill-tag">Mandarin (Conversational)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 6px;"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>Certifications</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag highlight">ADsP (2024)</span>
+                        <span class="skill-tag highlight">SQLD (2021)</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--slate);">
+                        <strong>ADsP:</strong> Advanced Data Analytics Semi-Professional (Korea National Certification)<br>
+                        <strong>SQLD:</strong> SQL Developer (Korea National Certification)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Korea University</h3>
+                    <p class="degree">M.S. in Business Analytics</p>
+                    <p class="date">Mar 2025 - Expected Feb 2026 · Seoul, Korea</p>
+                    <ul>
+                        <li>Academic Excellence Scholarship for outstanding academic performance.</li>
+                        <li>Relevant Courses: Empirical Analytics, AI in business Analytics, Business Analytics Programming, Financial Analytics, Social Media Analytics</li>
+                        <li>Focused on quantitative modeling, data-driven decision making, and machine learning applications in business environments</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <h3>The Chinese University of Hong Kong</h3>
+                    <p class="degree">Integrated BBA · Business Analytics</p>
+                    <p class="date">Sep 2015 - Mar 2021 · Hong Kong</p>
+                    <ul>
+                        <li>Honours at Entrance with partially funded scholarship</li>
+                        <li>Relevant Courses: Economics, International Business, Marketing, Strategic Management, Decision Modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm actively seeking Business Analyst opportunities in Texas. Let's discuss how I can contribute to your team.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:haileychung1111@hotmail.com" class="btn btn-primary">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/haileychung-11/" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="Hailey_HyeYun_Chung_Resume.pdf" class="btn btn-secondary" download>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Hailey HyeYun Chung.</p>
+    </footer>
+
+    <!-- PDF Modal -->
+    <div class="modal-overlay" id="pdfModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                <div class="modal-actions">
+                    <a href="#" class="modal-btn modal-btn-download" id="modalDownload" download>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        Download PDF
+                    </a>
+                    <button class="modal-btn modal-btn-close" onclick="closeModal()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        Close
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdfViewer" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, previewUrl, downloadUrl) {
+            const modal = document.getElementById('pdfModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const modalDownload = document.getElementById('modalDownload');
+            
+            modalTitle.textContent = title;
+            pdfViewer.src = previewUrl;
+            modalDownload.href = downloadUrl;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            
+            modal.classList.remove('active');
+            pdfViewer.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
