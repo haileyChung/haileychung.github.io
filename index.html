@@ -464,27 +464,47 @@
             font-size: 0.95rem;
         }
 
-        /* Download Bar */
-        .download-bar {
+        /* Project Links Bar */
+        .project-links {
             background: rgba(0, 0, 0, 0.3);
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            color: var(--slate-light);
-            font-size: 0.85rem;
-            transition: background 0.3s;
+            gap: 0.25rem;
         }
 
-        .download-bar:hover {
-            background: rgba(0, 0, 0, 0.5);
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.875rem;
+            color: var(--slate-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.1);
             color: var(--white);
         }
 
-        .download-bar svg {
-            width: 16px;
+        .project-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .project-links-divider {
+            width: 1px;
             height: 16px;
+            background: var(--slate);
+            margin: 0 0.25rem;
         }
 
         /* Modal Styles */
@@ -957,8 +977,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-visual" onclick="openModal('Retirement Pension Recommendation System', 'https://drive.google.com/file/d/1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC/preview', 'https://drive.google.com/uc?export=download&id=1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC')">
-                        <div class="project-thumbnail">
+                    <div class="project-visual">
+                        <div class="project-thumbnail" onclick="openModal('Retirement Pension Recommendation System', 'https://drive.google.com/file/d/1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC/preview', 'https://drive.google.com/uc?export=download&id=1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC')">
                             <div class="project-illustration">
                                 <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
                                 <div class="illustration-stats">
@@ -979,9 +999,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-bar">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Click to preview or download PDF
+                        <div class="project-links">
+                            <button class="project-link" onclick="openModal('Retirement Pension Recommendation System', 'https://drive.google.com/file/d/1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC/preview', 'https://drive.google.com/uc?export=download&id=1n3TaTwp8sMHHXX4AYuMERL2oIjNzgIkC')">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Report
+                            </button>
+                            <span class="project-links-divider"></span>
+                            <a class="project-link" href="https://biz.korea.ac.kr/eng/news/news_view.html?no=4389&key=&keyfield=&page=1&g=n" target="_blank">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Article
+                            </a>
+                            <span class="project-links-divider"></span>
+                            <a class="project-link" href="https://github.com/haileyChung/Retirement-Pension-Product-Recommendation-System" target="_blank">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1008,8 +1040,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-visual" onclick="openModal('D-Testbed: Loan Demand Forecasting', 'https://drive.google.com/file/d/13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn/preview', 'https://drive.google.com/uc?export=download&id=13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn')">
-                        <div class="project-thumbnail">
+                    <div class="project-visual">
+                        <div class="project-thumbnail" onclick="openModal('D-Testbed: Loan Demand Forecasting', 'https://drive.google.com/file/d/13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn/preview', 'https://drive.google.com/uc?export=download&id=13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn')">
                             <div class="project-illustration">
                                 <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg></div>
                                 <div class="illustration-stats">
@@ -1030,9 +1062,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-bar">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Click to preview or download PDF
+                        <div class="project-links">
+                            <button class="project-link" onclick="openModal('D-Testbed: Loan Demand Forecasting', 'https://drive.google.com/file/d/13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn/preview', 'https://drive.google.com/uc?export=download&id=13MZEUjozPfEe-i4luCJAiNwDuWkzx5Gn')">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Report
+                            </button>
+                            <span class="project-links-divider"></span>
+                            <a class="project-link" href="https://biz.korea.ac.kr/eng/news/news_view.html?no=4359&key=&keyfield=&page=3&g=n" target="_blank">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Article
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1059,8 +1098,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-visual" onclick="openModal('Seongsu-dong Transportation Optimization', 'https://drive.google.com/file/d/1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd/preview', 'https://drive.google.com/uc?export=download&id=1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd')">
-                        <div class="project-thumbnail">
+                    <div class="project-visual">
+                        <div class="project-thumbnail" onclick="openModal('Seongsu-dong Transportation Optimization', 'https://drive.google.com/file/d/1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd/preview', 'https://drive.google.com/uc?export=download&id=1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd')">
                             <div class="project-illustration">
                                 <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
                                 <div class="illustration-stats">
@@ -1081,9 +1120,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-bar">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Click to preview or download PDF
+                        <div class="project-links">
+                            <button class="project-link" onclick="openModal('Seongsu-dong Transportation Optimization', 'https://drive.google.com/file/d/1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd/preview', 'https://drive.google.com/uc?export=download&id=1pI7DSpBh_M5TPOtVetI_p1L_aZisvaWd')">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Report
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1110,8 +1151,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-visual" onclick="openModal('Shinhan Card Customer Segmentation', 'https://drive.google.com/file/d/1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru/preview', 'https://drive.google.com/uc?export=download&id=1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru')">
-                        <div class="project-thumbnail">
+                    <div class="project-visual">
+                        <div class="project-thumbnail" onclick="openModal('Shinhan Card Customer Segmentation', 'https://drive.google.com/file/d/1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru/preview', 'https://drive.google.com/uc?export=download&id=1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru')">
                             <div class="project-illustration">
                                 <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
                                 <div class="illustration-stats">
@@ -1132,9 +1173,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-bar">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Click to preview or download PDF
+                        <div class="project-links">
+                            <button class="project-link" onclick="openModal('Shinhan Card Customer Segmentation', 'https://drive.google.com/file/d/1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru/preview', 'https://drive.google.com/uc?export=download&id=1XotV2FgyU2_pODFfxLcIVHkJAzx_Bkru')">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Report
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1161,8 +1204,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-visual" onclick="openModal('E-commerce Subscription Analysis', 'https://drive.google.com/file/d/1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX/preview', 'https://drive.google.com/uc?export=download&id=1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX')">
-                        <div class="project-thumbnail">
+                    <div class="project-visual">
+                        <div class="project-thumbnail" onclick="openModal('E-commerce Subscription Analysis', 'https://drive.google.com/file/d/1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX/preview', 'https://drive.google.com/uc?export=download&id=1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX')">
                             <div class="project-illustration">
                                 <div class="illustration-icon"><svg width="64" height="64" fill="none" stroke="var(--accent-light)" viewBox="0 0 24 24" stroke-width="1.5"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg></div>
                                 <div class="illustration-stats">
@@ -1183,9 +1226,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-bar">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Click to preview or download PDF
+                        <div class="project-links">
+                            <button class="project-link" onclick="openModal('E-commerce Subscription Analysis', 'https://drive.google.com/file/d/1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX/preview', 'https://drive.google.com/uc?export=download&id=1EOkp9MbSF5UENlpzgYHiLVqgMeGkfOZX')">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Report
+                            </button>
                         </div>
                     </div>
                 </div>
